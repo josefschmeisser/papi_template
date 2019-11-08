@@ -16,10 +16,15 @@ set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O3")
 
 include(lib/papi.cmake)
 
-include_directories(
-  third_party)
+#include_directories(
+#  third_party)
 
 add_executable(high_level high_level.cpp)
 target_include_directories(high_level PRIVATE $<BUILD_INTERFACE:${PAPI_INCLUDE_DIR}>)
 target_link_libraries(high_level ${PAPI_LIBRARY_PATH})
 add_dependencies(high_level papi)
+
+add_executable(profile_test profile_test.cpp)
+target_include_directories(profile_test PRIVATE $<BUILD_INTERFACE:${PAPI_INCLUDE_DIR}>)
+target_link_libraries(profile_test ${PAPI_LIBRARY_PATH})
+add_dependencies(profile_test papi)
