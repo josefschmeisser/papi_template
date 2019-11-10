@@ -7,7 +7,7 @@ ExternalProject_Add(
     papi_src
     PREFIX ${PAPI_PREFIX}
     GIT_REPOSITORY "https://bitbucket.org/icl/papi.git"
-    GIT_TAG "stable-5.7"
+    GIT_TAG "papi-5-7-0-t"
     TIMEOUT 10
     SOURCE_SUBDIR "src"
     BUILD_IN_SOURCE True

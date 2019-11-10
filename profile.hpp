@@ -37,7 +37,9 @@ struct Counters {
             // Zen
             events["Instructions"] = PAPI_TOT_INS;
             events["Cycles"]       = PAPI_TOT_CYC;
-            events["L1Dmiss"]      = PAPI_L1_DCM;
+            // currently not implemented in PAPI
+            // see also: https://lkml.org/lkml/2019/5/2/696
+//            events["L1Dmiss"]      = PAPI_L1_DCM;
             events["StaleCycles"]  = PAPI_STL_ICY;
             events["BRmiss"]       = PAPI_BR_MSP;
         }
